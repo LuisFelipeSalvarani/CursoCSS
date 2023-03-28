@@ -7,7 +7,120 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: #d3d3d3;
+        }
+
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            height: 80px;
+            border-bottom: solid 5px #4682b4;
+            position: relative;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 10vh;
+            padding: 1em;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            background-color: #fff;
+            border: solid 3px #b4b4b4;
+            border-radius: 5px;
+            padding: 0.5em;
+            position: absolute;
+            right: 2vh;
+            display: none;
+            transition: all .3s ease-in-out;
+        }
+
+        .menu-toggle:hover {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .menu ul {
+            list-style: none;
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 100;
+            padding: 0.5em 1em;
+            transition: all .3s ease-in-out;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            color: #000;
+            background-color: #b4b4b4;
+        }
+
+        .autenticacao {
+            position: absolute;
+            right: 2vw;
+        }
+
+        .autenticacao a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3em;
+            padding: 0.5em 1.5em;
+            transition: all .3s ease-in-out;
+        }
+
+        .botao {
+            background-color: #dc143c;
+            padding: 0.5em 1.5em;
+            border-radius: 30px;
+        }
+
+        .autenticacao a:hover {
+            color: #b4b4b4;
+        }
+
+        .autenticacao .botao:hover {
+            color: #000;
+        }
+
+        @media (max-width: 900px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .menu-toggle {
+                display: inline;
+            }
+
+            .menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -44,7 +157,15 @@
     </header>
 
     <script>
-        // ...
+        window.onhashchange = function (e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL)
+            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldLink && oldLink.classList.remove('selected')
+            newLink && newLink.classList.add('selected')
+        }
     </script>
 </body>
 

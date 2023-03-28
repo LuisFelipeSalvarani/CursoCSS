@@ -5,7 +5,108 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+         /* body{
+            font-family: verdana, sans-serif;
+            font-weight: 100;
+        }
+
+        .cursos{
+            display: flex;
+            gap: 2em;
+        }
+        .curso{
+            width: 270px;
+            height: 300px;
+            box-shadow: 1px 1px 10px #bbb;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .curso img{
+            width: 260px;
+            margin: 5px;
+        }
+
+        .curso-info{
+            width: 250px;
+            height: 100px;
+            overflow: hidden;
+            margin: 0px 0px 0px 10px;
+        }
+
+        .curso-info h4{
+            font-size: 1.5em;
+            color: #2c2b2b;
+            margin: 0;
+        }
+
+        .curso-preco{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .preco-de{
+            color: darkred;
+            text-decoration: line-through;
+            font-size: 1.1em;
+        }
+
+        .preco-por{
+            color: darkgreen;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        minha resolução*/
+
+        .curso{
+            /* float: left; */
+            display: inline-block;
+            vertical-align: top; /* para näo mover o card se näo houver imagem */
+            font-family: verdana, sans-serif;
+            border: solid 1px #ccc;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+            height: 300px;
+            width: 260px;
+            margin: 5px 20px;
+            padding: 5px;
+        }
+
+        .curso img{
+            width: 100%;
+            max-height: 50%;
+        }
+
+        .curso-info{
+            padding: 10px;
+            height: 90px;
+            overflow: hidden;
+        }
+
+        .curso-info h4{
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0px;
+        }
+
+        .curso-preco{
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de{
+            text-decoration: line-through;
+            color: firebrick;
+        }
+
+        .preco-por{
+            color: green;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+
     </style>
 </head>
 
@@ -16,7 +117,7 @@
     <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
 
     <h2>Resultado</h2>
-    <div>
+    <div class="cursos">
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">
